@@ -1,0 +1,4 @@
+What is the major difference betweenn the fat arrow function and normal function?
+
+Fat arrow function doesnot have its own "this",it looks at its closest parent's "this". 
+Normal function looks at its local scope.
