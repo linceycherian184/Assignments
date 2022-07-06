@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Expense Tracker</title>
+    
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <h1>Expense Tracker App</h1>
+    <form action="#" id="my_form">
+        <label for="expense">Choose a expense:</label>
+      <input type="number" id="expense" required />
+      <label for="description">Description:</label>
+      <input type="text" id="description" required />
+      <label for="type">Choose a category:</label>
+        <select name="cat" id="category">
+            <option value="food">food</option>
+            <option value="entertainment">entertainment</option>
+            <option value="bills">Bills</option>
+            <option value="credit">Credit Card</option>
+            <option value="Travel">Travel</option>
+            <option value="Housing">Housing</option>
+            <option value="Insurance">Insurance</option>
+        </select>
+        <input type="submit" id="add" value="Add Expense" />
+    </form>
+    <ul id="expenselist"></ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
