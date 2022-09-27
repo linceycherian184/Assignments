@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Expense Tracker Application</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Expense Tracker</h1>
+    </header>
+
+    <section class="container">
+      <form id="my-form">
+        <h1>Add Expense</h1>
+        <div class="msg"></div>
+        <div>
+          <label for="name">Expense</label>
+          <input type="text" id="amt">
+        </div>
+        <div>
+          <label for="email">Description</label>
+          <input type="text" id="description">
+        </div>
+        <div>
+          <label for="expense">Choose a expense type:</label>
+
+          <select name="food" id="etype">
+            <option value="entertainment">entertainment</option>
+            <option value="Lifestyle">Lifestyle</option>
+            <option value="EMI_Credit">EMI/Credit</option>
+            <option value="Bills">Bills</option>
+            <option value="Travel">Travel</option>
+            <option value="Medical">Medical</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+        <input class="btn" type="submit" value="Add">
+      </form>
+
+      <ul id="e"></ul>
+
+       <ul class="items" id="users-items">
+       
+       
+      </ul> 
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
