@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 router.use('/add-product',(req,res,next)=>{
-    res.send(`<form action="/product" method="POST">
+    res.send(`<form action="/admin/product" method="POST">
     <label for="name">Name:</label>
     <input type="text" name="name" placeholder="Item name...">
     <label for="category">Category:</label>
@@ -17,7 +17,7 @@ router.use('/add-product',(req,res,next)=>{
 
 router.post('/product', (req, res, next) => {
     console.log(req.body);
-    res.redirect('/');
+    res.redirect('/shop');
 });
 
 module.exports= router;
