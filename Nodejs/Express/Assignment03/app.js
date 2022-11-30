@@ -18,6 +18,8 @@ app.use('/add-product',(req,res,next)=>{
     <input type="text" name="category" placeholder="Category...">
     <label for="price">Price:</label>
     <input type="text" name="price" placeholder="0.00">
+    <label for="size">Size:</label>
+    <input type="text" name="size" placeholder="0.00">
     <button type="submit">Add Product</button></form>`)
   
 })
@@ -28,7 +30,7 @@ app.post('/product', (req, res, next) => {
 });
 
 app.use('/', (req, res, next) => {
-  res.send('<h1>Hello from Express!</h1>');
+  res.send('<h1>You did it!</h1>');
 });
 
 app.listen(3000)
