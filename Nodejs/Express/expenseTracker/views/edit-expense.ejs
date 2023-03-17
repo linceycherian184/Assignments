@@ -3,10 +3,11 @@
 <body>
 
     <main>
+       
         <form class="product-form" action="/expense/<% if (editing) { %>edit-expense<% } else { %>add-expense<% } %>" method="POST">
             <div class="form-control">
                 <label for="title">Expense</label>
-                <input type="text" name="expense" id="expense" value="<% if (editing) { %><%= expense.title %><% } %>">
+                <input type="text" name="expense" id="expense" value="<% if (editing) { %><%= expense.expense %><% } %>">
             </div>
             <div class="form-control">
                 <label for="amount">Amount</label>

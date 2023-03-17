@@ -8,16 +8,21 @@ exports.getAddexpense = (req, res, next) => {
   });
 };
 
-exports.postAddExpense = (req, res, next) => {
-  const expense = req.body.expense;
+exports.postAddExpense = async(req, res, next) => {
+  console.log(req)
+  const expense = (req.body.expense);
   const amount = req.body.amount;
   const description = req.body.description;
-  const data = new Expense(null, expense, amount, description);
-  data.save().then(()=>{
-    res.redirect('/')
-  }).catch(err=>{
-    console.log('Error',err)
-  });
+  await Expense.create({
+    id:null,
+    expense:expense,
+    amount:amount,
+    description:description
+  }).then(()=>{
+      res.redirect('/expense/expenses')
+    }).catch(err=>{
+      console.log('Error',err)
+    });
  
 };
 
@@ -26,11 +31,14 @@ exports.getEditexpense = (req, res, next) => {
   if (!editMode) {
     return res.redirect('/');
   }
-  const prodId = req.params.expenseId;
-  expense.findById(prodId).then((expense)=>{
+  console.log(req.body)
+  const id = req.params.expenseId;
+ 
+  Expense.findOne({where:{id}}).then((expense)=>{
     if (!expense) {
       return res.redirect('/');
     }else{
+      console.log("expense",expense)
       res.render('expense/edit-expense', {
         pageTitle: 'Edit expense',
         path: '/expense/edit-expense',
